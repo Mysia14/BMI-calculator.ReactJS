@@ -3,26 +3,29 @@ import "./app.css";
 export default function App () {
   const [weight, setWeight] = useState ("");
   const [height, setHeight] = useState ("");
+  const [message, setMessage] = useState ("");
   
   function calculateBMI() {
     const altura = height / 100;
     const bmi = weight / (altura * altura);
 
     if(bmi < 18.6){
-      alert ("Underweight Range! Your BMI is " + bmi.toFixed(2))
+      setMessage ("Underweight Range! Your BMI is " + bmi.toFixed(2))
     }
     else if ( bmi >= 18.6 && bmi <24.9){
-      alert ("Healthy Weight Range! Your BMI is " + bmi.toFixed(2))
+      setMessage ("Healthy Weight Range! Your BMI is " + bmi.toFixed(2))
     }
     else if (bmi > 24.9 && bmi < 34.9){
-      alert ("Overweight Range! Your BMI is " + bmi.toFixed(2))
+      setMessage ("Overweight Range! Your BMI is " + bmi.toFixed(2))
     }
     else if (bmi > 34.9){
-      alert ("Obese Range! Your BMI is " + bmi.toFixed(2))
+      setMessage ("Obese Range! Your BMI is " + bmi.toFixed(2))
     }
 
   }
-
+// alert()+bmi.toFixed(2))
+// use.State -- add data
+//
  
 
   return(
@@ -40,7 +43,7 @@ export default function App () {
           Calculate
         </button>
       </div>
-      <h2> This is your BMI result.</h2>
+      <h2> {message}</h2>
     </div>
   )
 }
