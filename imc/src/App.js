@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./app.css";
+export default function App () {
+  return(
+    <div className="app">
+      <h1>BMI Calculator</h1>
+      <span>Let's Calculate your BMI</span>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="area-input">
+        <input type="text" placeholder="Your wheight (Kg)" />
+        <input type="text" placeholder="Your height (cm)" />
+
+        <button>
+          Calculate
+        </button>
+      </div>
+      <h2> This is your BMI result.</h2>
     </div>
-  );
+  )
 }
-
-export default App;
